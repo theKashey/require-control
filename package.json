@@ -1,6 +1,6 @@
 {
   "name": "require-control",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Get the full control over the nodejs module system.",
   "main": "./src/index.js",
   "scripts": {
