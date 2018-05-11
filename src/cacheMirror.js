@@ -3,6 +3,7 @@ const Module = require('module');
 function mirrorModuleCache(condition) {
   const internalCache = {};
   let enabled = true;
+  const mLoad = Module._load;
 
   Module._load = function (request, parent, isMain) {
 

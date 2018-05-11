@@ -2,6 +2,7 @@ const babel = require("babel-core");
 const fs = require("fs");
 const {forAllJS} = require('./utils');
 
+
 function compile(code) {
   return babel.transform(code, {
     babelrc: false,
@@ -15,6 +16,9 @@ function babelLoader(module, code, filename) {
 
 function esm_modules() {
   let enabled = true;
+
+  // precache
+  compile('');
 
   forAllJS(function (ext) {
     const getJS = require.extensions[ext];

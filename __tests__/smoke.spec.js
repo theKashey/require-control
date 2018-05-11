@@ -34,7 +34,7 @@ describe('mocked test', () => {
   it('imports in modules', () => {
     const remove = require('../es_modules');
     require('./node_modules/test');
-    require('./node_modules/test');
+    expect(require('./node_modules/test').default).to.be.equal(42);
     remove();
     require._cache = Module._cache = {};
     expect(() => require('./node_modules/test')).to.throw();

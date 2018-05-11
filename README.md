@@ -14,17 +14,20 @@ This is module-in-the-middle, require hack, path control, this is just a toolbox
 ```js
 import 'require-control/register';
 ```
+And then all `imports` inside node_modules will work
 
 2. To make you project _webpack-compact_ by forcing `.default` to exists on exports
 ```js
 import 'require-control/webpackDefault';
 ```
+And then defalt will _always_ exists.
 
 3. To create a loop-aware module cache
 ```js
 import {mirrorModuleCache} from 'require-control';
 mirrorModuleCache((requireName, absoluteFilePath) => boolean);
 ```
+And that will change how cache works for the selected files.
 
 4. To control path resolution
 ```js
@@ -36,6 +39,8 @@ setAliases({
   'from': 'to'
 });
 ```
+And then all module aliases (webpack resolve, ts paths, aliases, anything)
+
 PS: You can use setAliases to achieve 10-100 speedup against tsconfig-paths, if you are not using "complex" typescript paths. 
 
 # Licence
