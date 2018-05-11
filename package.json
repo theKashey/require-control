@@ -1,0 +1,32 @@
+{
+  "name": "require-control",
+  "version": "1.0.0",
+  "description": "Get the full control over the nodejs module system.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha __tests__/**/*spec.js"
+  },
+  "files": [
+    "es_modules.js",
+    "webpackDefault.js"
+  ],
+  "keywords": [
+    "mocha",
+    "karma",
+    "babel",
+    "nodejs",
+    "imports",
+    "syntax-error",
+    "esm"
+  ],
+  "author": "Anton Korzunov (thekashey@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1"
+  }
+}
