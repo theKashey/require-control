@@ -1,6 +1,6 @@
 {
   "name": "require-control",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get the full control over the nodejs module system.",
   "main": "./src/index.js",
   "scripts": {
@@ -19,6 +19,10 @@
     "syntax-error",
     "esm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theKashey/require-control"
+  },
   "author": "Anton Korzunov (thekashey@gmail.com)",
   "license": "ISC",
   "dependencies": {
