@@ -43,5 +43,40 @@ And then all module aliases (webpack resolve, ts paths, aliases, anything)
 
 PS: You can use setAliases to achieve 10-100 speedup against tsconfig-paths, if you are not using "complex" typescript paths. 
 
+## Examples
+
+#### TypeScript + ES6 + Mocha
+
+```js
+require('ts-node/register');  // support TS
+require('babel-register');    // support ES
+
+const { esm_modules, webpackDefault, setAliases, resolutions } = require('require-control');
+
+esm_modules();                // support ES in node_modules
+webpackDefault();             // "webpack" default imports everywhere 
+
+setAliases({                  // why not!
+  'common': path.join(root, 'src/common'),
+  'components': path.join(root, 'src/components'),
+});
+
+resolutions(request => {      // custom resolution
+  if (request === 'react') {
+    return 'preact';
+  }
+});
+```
+
+#### Webpack aliases (or typescript paths)
+```js
+const {setAliases } = require('require-control');
+
+setAliases({                  
+  'common': path.join(root, 'src/common'),
+  'components': path.join(root, 'src/components'),
+});
+```
+
 # Licence
 MIT
