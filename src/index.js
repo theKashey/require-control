@@ -1,12 +1,12 @@
 const esm_modules = require('./esm_modules');
-const webpackDefault = require('./webpackDefault');
+const interopRequire = require('./interopRequire');
 const cacheMirror = require('./cacheMirror');
 const resolutions = require('./resolutions');
 const setAliases = require('./setAliases');
 
 
 exports.esm_modules = esm_modules;
-exports.webpackDefault = webpackDefault;
+exports.interopRequire = interopRequire;
 exports.cacheMirror = cacheMirror;
 exports.resolutions = resolutions;
 exports.setAliases = setAliases;

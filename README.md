@@ -16,9 +16,9 @@ import 'require-control/register';
 ```
 And then all `imports` inside node_modules will work
 
-2. To make your project _webpack-compact_ by forcing `.default` to exist on exports
+2. To make your project _webpack-compact_(babel interop require) by forcing `.default` to exist on exports
 ```js
-import 'require-control/webpackDefault';
+import 'require-control/interop-require';
 ```
 And then default will _always_ exists.
 
@@ -51,10 +51,10 @@ PS: You can use setAliases to achieve 10-100 speedup against tsconfig-paths, if 
 require('ts-node/register');  // support TS
 require('babel-register');    // support ES
 
-const { esm_modules, webpackDefault, setAliases, resolutions } = require('require-control');
+const { esm_modules, interopRequire, setAliases, resolutions } = require('require-control');
 
 esm_modules();                // support ES in node_modules
-webpackDefault();             // "webpack" default imports everywhere 
+interopRequire();             // "webpack" default imports everywhere 
 
 setAliases({                  // why not!
   'common': path.join(root, 'src/common'),

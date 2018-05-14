@@ -25,7 +25,7 @@ describe('mocked test', () => {
   });
 
   it('without default', () => {
-    require('../webpackDefault');
+    require('../interop-require');
     const withOutdefault = require('./withoutDefault')
     expect(withOutdefault.default()).to.be.equal(42);
     expect(withOutdefault()).to.be.equal(42);

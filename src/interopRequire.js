@@ -1,6 +1,6 @@
 const {forAllJS} = require('./utils');
 
-function webpackDefault() {
+function interopRequire() {
   let enabled = true;
 
   forAllJS(function (ext) {
@@ -14,7 +14,10 @@ function webpackDefault() {
         ['object', 'function'].indexOf(typeof data.exports) >= 0 &&
         !data.exports.default
       ) {
-        data.exports.default = data.exports;
+        Object.defineProperty(data.exports, 'default', {
+          enumerable: false,
+          value: data.exports
+        })
       }
 
       return data;
@@ -25,4 +28,4 @@ function webpackDefault() {
   }
 }
 
-module.exports = webpackDefault;
+module.exports = interopRequire;

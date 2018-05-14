@@ -9,7 +9,7 @@
   "files": [
     "src",
     "es_modules.js",
-    "webpackDefault.js"
+    "interop-require.js"
   ],
   "keywords": [
     "mocha",
