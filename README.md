@@ -1,4 +1,4 @@
-# require-control [![Build Status](https://secure.travis-ci.org/theKashey/require-control.svg)](http://travis-ci.org/theKashey/require-control)
+# require-control [![Build Status](https://secure.travis-ci.org/theKashey/require-control.svg)](http://travis-ci.org/theKashey/require-control) [![Greenkeeper badge](https://badges.greenkeeper.io/theKashey/require-control.svg)](https://greenkeeper.io/)
 
 This is a module-in-the-middle, require hack, path control, this is just a toolbox to master nodejs modules.
 
