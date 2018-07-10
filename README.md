@@ -65,7 +65,8 @@ require('babel-register');    // support ES
 const { esm_modules, interopRequire, setAliases, resolutions } = require('require-control');
 
 esm_modules();                // support ES in node_modules
-interopRequire();             // "webpack" default imports everywhere 
+interopRequire();             // "webpack" default imports everywhere in js,jsx,less,scss
+interopRequire(['.less']);    // "webpack" default imports for .less files
 
 setAliases({                  // why not!
   'common': path.join(root, 'src/common'),

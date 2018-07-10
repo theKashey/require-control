@@ -1,10 +1,15 @@
-const {forAllJS} = require('./utils');
+const {allHookable} = require('./utils');
 
-function interopRequire() {
+function interopRequire(extensions) {
   let enabled = true;
 
-  forAllJS(function (ext) {
-    const getJS = require.extensions[ext];
+  const ext = extensions || allHookable;
+  if(!ext.length){
+    throw new Error('interopRequire - extensions should be an array');
+  }
+
+  ext.forEach(ext => {
+    const getJS = extensions || require.extensions[ext];
 
     require.extensions[ext] = (module, filename) => {
       const data = getJS(module, filename) || module;
