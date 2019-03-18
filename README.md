@@ -41,7 +41,19 @@ setAliases({
 ```
 And then all module aliases (webpack resolve, ts paths, aliases, anything)
 
-PS: You can use setAliases to achieve 10-100 speedup against tsconfig-paths, if you are not using "complex" typescript paths. 
+PS: You can use setAliases to achieve 10-100 speedup against tsconfig-paths, if you are not using "complex" typescript paths.
+
+### 4.5 To control module resolution order
+```js
+import {hoistExtensions} from 'require-control';
+
+// make tsx, ts and jsx be picked first
+hoistExtensions(['.tsx', '.ts', '.jsx']);
+``` 
+That could be quite usefull, if you have `Component.less` and `Component.jsx` or `Component.tsx`, as long as
+`require('./Component')` would load `.less` file - it goes before any other "non-native" extension.
+
+PS: This command just moves listed extensions prior non-listed.
 
 ### 5. To apply any babel transformation, anywhere
 `babelIt(pick, babelSettings)`, where pick could return true, false, or code to pipe into babel.

@@ -54,3 +54,16 @@ describe('mocked test', () => {
     expect(() => require('target/1')).to.throw();
   });
 });
+
+describe('hoistExtensions', () => {
+  it('default behavior', () => {
+    expect(require('./require-order/a').value).to.be.equal('js');
+  });
+
+  it('hoisted behavior', () => {
+    const hoist = require('../src/hoistExtensions');
+    hoist(['.json']);
+    // require b to bypass path cache
+    expect(require('./require-order/b').value).to.be.equal('json');
+  });
+});
