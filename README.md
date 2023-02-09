@@ -43,6 +43,8 @@ And then all module aliases (webpack resolve, ts paths, aliases, anything)
 
 PS: You can use setAliases to achieve 10-100 speedup against tsconfig-paths, if you are not using "complex" typescript paths.
 
+PPS: `setAlias` is doing the same [module-alias](https://github.com/ilearnio/module-alias) does - changes how `Module._resolveFilename` works. If you want to migrate to `aliases` from `relative` imports you might use [relative-to-alias](https://github.com/s-yadav/relative-to-alias) or [restructor](https://github.com/theKashey/restructor).
+
 ### 4.5 To control module resolution order
 ```js
 import {hoistExtensions} from 'require-control';
@@ -101,6 +103,9 @@ setAliases({
   'components': path.join(root, 'src/components'),
 });
 ```
+
+### Would not be done without
+This project would not be ever created without my work on [rewiremock](https://github.com/theKashey/rewiremock).
 
 # Licence
 MIT
