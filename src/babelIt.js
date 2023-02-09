@@ -1,11 +1,11 @@
-const babel = require("babel-core");
+const {transformSync} = require("@babel/core");
 const fs = require("fs");
 const {forAllJS} = require('./utils');
 
 function babelIt(filter, babelSettings) {
 
-  function compile(code) {
-    return babel.transform(code, babelSettings).code
+  function compile(code, filename) {
+    return transformSync(code, {...babelSettings, filename}).code
   }
 
   function babelLoader(module, code, filename) {
@@ -16,7 +16,7 @@ function babelIt(filter, babelSettings) {
     let enabled = true;
 
     // precache
-    compile('');
+    compile('','fake.js');
 
     forAllJS(function (ext) {
       const getJS = require.extensions[ext];
